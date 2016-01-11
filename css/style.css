@@ -1,9 +1,9 @@
-/*--
+/*
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+*/
 @charset "utf-8";@font-face{ font-family:'Alp Ekran';src:url('../font/alp.eot');src:url('../font/alp.eot?#iefix') format('embedded-opentype'),url('../font/alp.woff') format('woff'),url('../font/alp.ttf') format('truetype'),url('../font/alpn.svg#ALPEKRANRegular') format('svg');font-weight:normal;font-style:normal}
 
 body{
@@ -11,14 +11,14 @@ body{
     font-family: 'Alp Ekran','Roboto-Regular';
     background-color:#fff;
 }
-@font-face {
+/*@font-face {
       font-family: 'Roboto-Regular';
       src: url(../fonts/Roboto-Regular.ttf) format('truetype');
 }
 @font-face {
       font-family: 'Marvel-Regular';
       src: url(../fonts/Marvel-Regular.ttf) format('truetype');
-}
+}*/
 body a{
     transition: 0.5s all ease;
     -webkit-transition: 0.5s all ease;
@@ -1296,7 +1296,7 @@ p.qty {
     line-height: 1.6em;
     color: #5D4B33;
     margin-bottom: 0.5em;
-    font-family: 'Marvel-Regular';
+    font-family: 'Alp Ekran';
 }
 .single-grid p {
     font-size: 1em;
@@ -1383,7 +1383,7 @@ p span.overline{
 .related-products h3 {
     font-size: 3.5em;
     color: #F07818;
-    font-family: 'Marvel-Regular';
+    font-family: 'Alp Ekran','Marvel-Regular';
 }
 .products-grid h4 {
     font-size: 1.1em;
@@ -1424,7 +1424,7 @@ p span.overline{
     padding-bottom: 1em;
     margin: 0;
     text-align: center;
-    font-family: 'Marvel-Regular';
+   font-family: 'Alp Ekran','Marvel-Regular';
 }
 .register-top-grid .input, .register-bottom-grid .input {
     margin: 10px 0;
@@ -1567,7 +1567,7 @@ p span.overline{
 }
 .cart-item-info h3 {
     font-size: 2em;
-    font-family: 'Marvel-Regular';
+   font-family: 'Alp Ekran','Marvel-Regular';
 }
 .cart-item-info h3 a {
     color: #F07818;
@@ -1878,7 +1878,7 @@ i.sele{
     font-size: 2.1em;
     color: #F07818;
     margin: 0 0 0.8em 0;
-    font-family: 'Marvel-Regular';
+   font-family: 'Alp Ekran','Marvel-Regular';
 }
 .contact-infom {
   padding-top: 4em;
@@ -3333,4 +3333,4 @@ h2 {
     bottom: 17%;
 }
 }
-/*--//responsive-design---*/
+/*--//responsive-design---
