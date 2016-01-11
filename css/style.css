@@ -4,7 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-@charset "utf-8";@font-face{ font-family:'Alp Ekran';src:url('font/alp.eot');src:url('font/alp.eot?#iefix') format('embedded-opentype'),url('font/alp.woff') format('woff'),url('font/alp.ttf') format('truetype'),url('font/alpn.svg#ALPEKRANRegular') format('svg');font-weight:normal;font-style:normal}
+@charset "utf-8";@font-face{ font-family:'Alp Ekran';src:url('../font/alp.eot');src:url('../font/alp.eot?#iefix') format('embedded-opentype'),url('../font/alp.woff') format('woff'),url('../font/alp.ttf') format('truetype'),url('../font/alpn.svg#ALPEKRANRegular') format('svg');font-weight:normal;font-style:normal}
 
 body{
     margin:0;
