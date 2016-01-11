@@ -21,7 +21,7 @@
 					</div>
 				</div>	
 				<div class="col-md-4 single-grid simpleCart_shelfItem">		
-					<h3>Yummy freshly baked Blackforest Cake 1 Kg! with blends of chocochips</h3>
+					<a href="<?php the_permalink('') ?>" title="<?php the_title(); ?><?php setPostViews(get_the_ID()); ?>"><h3><?php the_title('') ?></h3></a>
 					<p>Cake cutting is one of the most wonderful ways of celebrating a special moment. What better way to celebrate than with a rich and mouth watering chocochips cake</p>
 					<ul class="size">
 						<h3>Size</h3>

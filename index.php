@@ -42,7 +42,7 @@
 					<div class="gallery-info galrr-info-two">
 						<p>
 							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-							view
+							<?php echo getPostViews(get_the_ID()); ?> view
 						</p>
 						<a class="shop" href="single.html">SHOP NOW</a>
 						<div class="clearfix"></div>
@@ -69,8 +69,9 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="col-md-3 gallery-grid ">
 				<?php if ( has_post_thumbnail() ) { ?>
-				<a href="<?php the_permalink() ?>
-					">
+				
+
+				<a href="<?php the_permalink('') ?>" title="<?php the_title(); ?><?php setPostViews(get_the_ID()); ?>"><?php the_title('') ?></a>
 					<img src="<?php post_thumbnail_src(635,278); ?>
 					" width="635" height="278" alt="
 					<?php the_title(); ?>" class="img-responsive" /></a>
@@ -86,7 +87,7 @@
 				<div class="gallery-info">
 					<p>
 						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-						view
+						<?php echo getPostViews(get_the_ID()); ?> view
 					</p>
 					<a class="shop" href="<?php the_permalink(); ?>">SHOP NOW</a>
 					<div class="clearfix"></div>
