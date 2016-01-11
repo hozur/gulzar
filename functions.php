@@ -1,4 +1,28 @@
 <?php
+
+
+//uyghur font sitart
+add_action('admin_head', 'arqabet_uslub');
+function arqabet_uslub() {
+  echo '<style>
+    body, td, textarea, input, select,p,div,ul,li,ol,h2,h3,h1,h4,h6,a,b{
+      font-family: "Alp Ekran" !important;
+      font-size: 15px;
+    } 
+.ab-label{
+      font-family: "Alp Ekran" !important;
+      font-size: 15px;
+    } 
+  </style>
+<script type="text/javascript">
+setTimeout(function(){
+document.getElementById("content_ifr").contentDocument.getElementById("tinymce").style.fontFamily="Alp Ekran";
+document.getElementById("content_ifr").contentDocument.getElementById("tinymce").style.fontSize="15px";
+}, 2000);
+</script>';
+}
+//uyghur font end!
+
 include(TEMPLATEPATH."/includes/theme_options.php");
 //顶部导航（菜单）设置
 include("includes/theme-postmeta.php");
