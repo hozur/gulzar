@@ -103,7 +103,7 @@
 						<form class="navbar-form">
 							<input type="text" class="form-control">
 							<button type="submit" class="btn btn-default" aria-label="Left Align">
-								Search
+								ئىزدەش
 							</button>
 						</form>
 					</div>	
@@ -114,17 +114,17 @@
 						<form id="loginForm">
 							<fieldset id="body">
 								<fieldset>
-									<label for="email">Email Address</label>
+									<label for="email">ئېلىخەت ئادرىسى</label>
 									<input type="text" name="email" id="email">
 								</fieldset>
 								<fieldset>
-									<label for="password">Password</label>
+									<label for="password">پارول</label>
 									<input type="password" name="password" id="password">
 								</fieldset>
 								<input type="submit" id="login" value="Sign in">
-								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>ئەستە ساقلا</i></label>
 							</fieldset>
-							<p>New User ? <a class="sign" href="account.html">Sign Up</a> <span><a href="#">Forgot your password?</a></span></p>
+							<p>تىزىملاتمىغان؟ <a class="sign" href="account.html">كىرىش</a> <span><a href="#">پارولنى ئۇنۇتتىڭىز؟</a></span></p>
 						</form>
 					</div>
 				</div>
@@ -134,7 +134,7 @@
 						<h4><a href="checkout.html">
 							<span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
 						</a></h4>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
+						<p><a href="javascript:;" class="simpleCart_empty">ھارۋا قۇرۇقداش</a></p>
 						<div class="clearfix"> </div>
 					</div>
 				</div>
