@@ -5,9 +5,10 @@ include("includes/theme-postmeta.php");
 add_theme_support( 'post-thumbnails' ); 
 if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
 	add_theme_support( 'post-thumbnails' );
-	
-	
 }
+//META-BOX 函数
+include_once(TEMPLATEPATH.'/metabox/metaboxclass.php');   
+include_once(TEMPLATEPATH.'/metabox/metabox.php'); 
 
 // gavatar
 function get_ssl_avatar($avatar) {
@@ -17,17 +18,7 @@ function get_ssl_avatar($avatar) {
 
 add_filter('get_avatar', 'get_ssl_avatar');
 
-
-function asts_slider_image(){
-
-if ( has_post_thumbnail() ) {
-	 the_post_thumbnail( 'asts_slider' );
-}  else { ?>
-	<img src="<?php bloginfo('template_directory'); ?>/images/thumb.png" width="830" height="280"/>
-<?php
-	};
-}
-
+//菜单回调函数
 
 if ( function_exists('register_nav_menus') ) {
 	register_nav_menus(
@@ -36,27 +27,16 @@ if ( function_exists('register_nav_menus') ) {
 	'h-tops-menu' => __( 'قوشۇمچە تىزىملىك' ),
 	'h-left-menu' => __( 'يان تىزىملىك' ),
 	'h-foot-menu' => __( 'ئاستى تىزىملىك' ),
-    'filters-left-menu' => __( 'ئالىي ئىزدەش-ئوڭ-بىر' ),
+  'filters-left-menu' => __( 'ئالىي ئىزدەش-ئوڭ-بىر' ),
   )
 );
 }
 
-
-
-//META-BOX 函数
-include_once(TEMPLATEPATH.'/metabox/metaboxclass.php');   
-include_once(TEMPLATEPATH.'/metabox/metabox.php'); 
-//菜单回调函数
-
-
 //添加形式
 	add_theme_support( 'post-formats', array( 
 		'aside', 'status','video','audio','gallery','link','chat','image','quote' ) );
-	
-	/*add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',) );*/
+
 //添加小工具
-  ///////////////////
 
 /**
  * Register three Twenty Fourteen widget areas.
@@ -99,26 +79,6 @@ function twentyfourteen_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
 
-  ////////////////
-  
-
-//添加小工具
-    include TEMPLATEPATH . '/widgets/tagcloud.php';
-    include TEMPLATEPATH . '/widgets/new_posts.php';
-	include TEMPLATEPATH . '/widgets/new_comments.php';
-	
-    
-
-	
-    
-//屏蔽默认工具
-
-//添加特色图像
-if ( function_exists( 'add_theme_support' ) ) {
-	add_theme_support( 'post-thumbnails' );
-}
-
-
 
 
 //图片获取
@@ -143,30 +103,6 @@ function post_thumbnail_src($width = 100,$height = 80){
   //echo get_bloginfo("template_url").'/timthumb.php?src='.$post_thumbnail_src.'&amp;h='.$height.'&amp;w='.$width.'&amp;zc=1';
    echo $post_thumbnail_src;
 }
-
-//图片获取
-function post_icons_src($width = 48,$height = 48){
-     global $post;
-    $post_icons_src = '';
-    ob_start();
-    ob_end_clean();
-    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    $post_icons_src = $matches [1] [0];   //获取该图片 src
-    //如果日志中没有图片，则显示随机图片
-      $random = mt_rand(1, 30);
-      $post_icons_src = get_bloginfo('template_url').'/images/icons/'.$random.'.png';
-      //如果日志中没有图片，则显示默认图片
-      //$post_icons_src = get_bloginfo('template_url'). '/images/menzil.png';
-    
-  
-  //echo get_bloginfo("template_url").'/timthumb.php?src='.$post_icons_src.'&amp;h='.$height.'&amp;w='.$width.'&amp;zc=1';
-   echo $post_icons_src;
-}
-
-
-
-
-
 
 
 // 获得热评文章
@@ -219,43 +155,6 @@ if ( STYLESHEETPATH == TEMPLATEPATH ) {
 	define('OF_FILEPATH', STYLESHEETPATH);
 	define('OF_DIRECTORY', get_bloginfo('stylesheet_directory'));
 }
-
-
-
-//评论回复...
-function comment_mail_notify($comment_id) {
-    $admin_email = get_bloginfo ('admin_email'); 
-    $comment = get_comment($comment_id);
-    $comment_author_email = trim($comment->comment_author_email);
-    $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
-    $to = $parent_id ? trim(get_comment($parent_id)->comment_author_email) : '';
-    $spam_confirmed = $comment->comment_approved;
-    if (($parent_id != '') && ($spam_confirmed != 'spam') && ($to != $admin_email)) {
-    $wp_email = 'admin@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
-    $subject = 'سىزنىڭ [' . get_option("blogname") . '] دىكى ئىنكاسىڭىزغا جاۋاب قايتۇرۇلدى!';
-    $message = '
-	<style>
-	@font-face{font-family:UKIJ Tuz Tom;src:url('.get_bloginfo('template_url').'/UKIJTuT.eot);src:url('.get_bloginfo('template_url').'/UKIJTuT.eot?#iefix) format(embedded-opentype),url('.get_bloginfo('template_url').'/UKIJTuT.woff) format(woff),url('.get_bloginfo('template_url').'/UKIJTuT.ttf) format(truetype),url('.get_bloginfo('template_url').'/UKIJTuT.svg#UKIJTuzTomRegular) format(svg);font-weight:normal;font-style:normal}
-	</style>
-    <div style="background-color:#fff; border:1px solid #666666; color:#111; -moz-border-radius:8px; -webkit-border-radius:8px; -khtml-border-radius:8px; border-radius:8px; font-size:12px; width:702px; margin:0 auto; margin-top:10px;">
-    <div style=" direction:rtl;background:#666666; width:100%; height:60px; color:white; -moz-border-radius:6px 6px 0 0; -webkit-border-radius:6px 6px 0 0; -khtml-border-radius:6px 6px 0 0; border-radius:6px 6px 0 0; ">
-    <span style="height:60px; line-height:60px; margin-right:30px; font-size:20px;font-family:UKIJ Tuz Tom,Alpida Unicode System,Microsoft Uighur,Tahoma,Arial,Helvetica,sans-serif;"> سىزنىڭ<a style="text-decoration:none; color:#ff0;font-weight:600;"> [' . get_option("blogname") . '] </a> دىكى ئىنكاسىڭىزغا جاۋاب قايتۇرۇلدى!</span></div>
-    <div style=" direction:rtl;width:90%; margin:0 auto; font-family:UKIJ Tuz Tom,Alpida Unicode System,Microsoft Uighur,Tahoma,Arial,Helvetica,sans-serif; font-size:17px">
-      <p> ئەسسالامۇ ئەلەيكۇم، ' . trim(get_comment($parent_id)->comment_author) . '!</p>
-      <p>سىزنىڭ «' . get_the_title($comment->comment_post_ID) . '» دېگەن كىتابدىكى ئىنكاسىڭىز:<br />
-      <p style="background-color: #EEE;border: 1px solid #DDD;padding: 20px;margin: 15px 0;">'. trim(get_comment($parent_id)->comment_content) . '</p>
-      <p>' . trim($comment->comment_author) . ' نىڭ سىزگە قايتۇرغان جاۋابى:<br />
-      <p style="background-color: #EEE;border: 1px solid #DDD;padding: 20px;margin: 15px 0;">'. trim($comment->comment_content) . '</p>
-      <p>تولۇق مەزمۇنىنى كۆرمەكچى بولسىڭىز <a href="' . htmlspecialchars(get_comment_link($parent_id, array('type' => 'comment'))) . '">بۇ يەردىن كىرىپ كۆرۈڭ.</a></p>
-      <p>سىزنىڭ بىكىتىمىزگە دائىم كېلىپ تۇرىشىڭىزنى قارشى ئالىمىز! ئادرىسىمىز: <a href="' . get_option('home') . '">' . get_option('blogname') . '</a></p>
-      <p>(ئىلخەت ئاپتوماتىك ئەۋەتىلدى، جاۋاب قايتۇرماڭ.)</p>
-    </div></div>';
-    $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
-    $headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
-    wp_mail( $to, $subject, $message, $headers );
-    }
-  }
-  add_action('comment_post', 'comment_mail_notify');
 
 ///分页函数
 function pagenavi($p = 2)
