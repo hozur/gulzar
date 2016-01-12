@@ -23,20 +23,17 @@ document.getElementById("content_ifr").contentDocument.getElementById("tinymce")
 }
 //uyghur font end!
 
-include(TEMPLATEPATH."/includes/theme_options.php");
+// include(TEMPLATEPATH."/includes/theme_options.php");
 //顶部导航（菜单）设置
-include("includes/theme-postmeta.php");
-add_theme_support( 'post-thumbnails' ); 
-if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
-	add_theme_support( 'post-thumbnails' );
-}
+
 //META-BOX 函数
-include_once(TEMPLATEPATH.'/metabox/metaboxclass.php');   
-include_once(TEMPLATEPATH.'/metabox/metabox.php'); 
+//include("includes/theme-postmeta.php");
+// include_once(TEMPLATEPATH.'/metabox/metaboxclass.php');   
+// include_once(TEMPLATEPATH.'/metabox/metabox.php'); 
 
 // gavatar
 function get_ssl_avatar($avatar) {
- $avatar = preg_replace('/http:\/\/([\d])/','https://secure',$avatar);
+ $avatar = preg_replace('/https:\/\/([\d])/','https://secure',$avatar);
  return $avatar;
 }
 
