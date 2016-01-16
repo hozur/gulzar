@@ -142,10 +142,10 @@ b.caret {
 /*--//navigation--*/
 /*--//start menu--*/
 .header-right{
-    float: left;
+    float: right;
     width: 6%;
     text-align: center;
-    border-left:1px solid #79654A;
+    border-right: 1px solid #79654A;
 }
 .header-right a{
     display:block;
@@ -196,7 +196,7 @@ b.caret {
 .search form.navbar-form:before {
     content: '';
     position: absolute;
-    left: 22px;
+    right: 115px;
     top: -11%;
     border-left: 10px solid rgba(0, 0, 0, 0);
     border-right: 10px solid rgba(0, 0, 0, 0);
@@ -266,7 +266,7 @@ fieldset#body {
     color:#87807c;
     margin:10px 0 0 0;
     display:block;
-    text-align: left;
+    text-align: right;
     font-size:0.9em;
 }
 #loginForm #body fieldset label{
@@ -724,6 +724,28 @@ ul.rating li a:hover, .price_single a:hover, ul.size li a:hover {
 .b-link-stripe:hover .b-line{
     opacity:1;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.tagcloud {
+    padding-top: 10px;
+}
+.tagcloud a {
+    text-align: center;
+    color: #FFF;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 6px;
+    margin-right: 6px;
+    padding: 4px 8px 6px 8px;
+    border-radius: 2px;
+    opacity: 0.70000002384185791015625;
+    cursor: pointer;
+    box-shadow: 0 4px 3px -3px rgba(42, 93, 132, 0.38);
+    transition: opacity 0.2s ease-in-out;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /*-----------------------------------------------------------------------------------*/
 /*  Animation effects
 /*-----------------------------------------------------------------------------------*/

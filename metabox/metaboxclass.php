@@ -1,11 +1,11 @@
 <?php
 /***********wordpress文章编辑页面创建自定义面板类文件*************/
-class doghap_meta_box{
+class menzil_meta_box{
 	var $options;
 	var $boxinfo;
 	
 	//构造函数
-	function doghap_meta_box($options,$boxinfo){
+	function menzil_meta_box($options,$boxinfo){
 		$this->options = $options;
 		$this->boxinfo = $boxinfo;
 		
